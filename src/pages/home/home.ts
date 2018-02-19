@@ -19,6 +19,7 @@ export class HomePage {
  
   ionViewDidLoad(){
     this.loadMap();
+    
   }
  
   loadMap(){
@@ -34,6 +35,10 @@ export class HomePage {
       }
  
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      
+    var myMarker = new google.maps.Marker({position: latLng, title: 'YOUR POSITION'});
+    myMarker.setMap(this.map);
+ 
  
     }, (err) => {
       console.log(err);
